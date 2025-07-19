@@ -36,5 +36,3 @@ This is a personal portfolio website built to showcase my skills, projects, and 
 - 📧 lohithtr46@gmail.com
 
 ---
-
-## 📁 Folder Structure
