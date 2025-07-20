@@ -43,7 +43,6 @@ html{
     background: #bbb;
 }
 
-/* ---##-- REUSABLE CSS --##--- */
 
 /* ----- GLOBAL BUTTON DESIGN ----- */
 .btn{
@@ -250,7 +249,7 @@ nav{
         border-radius: 45% 55% 45% 55%;
     }
 }
-.scroll-btn{
+/* .scroll-btn{
    position: absolute;
    bottom: 0;
    left: 50%;
@@ -269,7 +268,7 @@ nav{
 }
 .scroll-btn i{
     font-size: 20px;
-}
+} */
 
 /* ----- MAIN BOX ----- */
 .section{
