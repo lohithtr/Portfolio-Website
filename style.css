@@ -777,7 +777,7 @@ footer{
   
   .featured-text {
     padding: 20px;
-    text-align: justify;
+   
   }
   
   .featured-name {
@@ -786,7 +786,6 @@ footer{
   
   .about-container {
     padding: 25px;
-    text-align:justify;
   }
   
   .about-btn {
@@ -820,6 +819,7 @@ footer{
   
   .featured-text-info {
     font-size: 0.9rem;
+       text-align: justify;
   }
   
   .skills-grid {
