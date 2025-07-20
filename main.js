@@ -1,3 +1,4 @@
+// Mobile Menu Function
 function myMenuFunction() {
   var menuBtn = document.getElementById("myNavMenu");
   if (menuBtn.className === "nav-menu") {
@@ -23,7 +24,7 @@ window.onscroll = function () {
 
 // Typing animation
 var typingEffect = new Typed(".typedText", {
-  strings: [ "Web Developer", "Java Developer","Designer"],
+  strings: ["Web Developer", "Java Developer", "Designer"],
   loop: true,
   typeSpeed: 100,
   backSpeed: 80,
@@ -71,3 +72,67 @@ function scrollActive() {
   });
 }
 window.addEventListener("scroll", scrollActive);
+
+// Animate progress bars when they come into view
+const animateProgressBars = () => {
+  const progressBars = document.querySelectorAll('.progress');
+  
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const progressBar = entry.target;
+        // Get the width from the parent's data attribute or default to 100%
+        const targetWidth = progressBar.parentElement.getAttribute('data-width') || '100%';
+        progressBar.style.width = targetWidth;
+        observer.unobserve(progressBar);
+      }
+    });
+  }, { 
+    threshold: 0.5,
+    rootMargin: '0px 0px -50px 0px' // Trigger when 50px from bottom of viewport
+  });
+
+  // Initialize all progress bars to 0 width
+  progressBars.forEach(bar => {
+    bar.style.width = '0';
+    observer.observe(bar);
+  });
+};
+
+// Initialize everything when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+  // Start the progress bar animations
+  animateProgressBars();
+  
+  // Add click event for mobile menu links to close menu after click
+  const navLinks = document.querySelectorAll('.nav-menu a');
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      if (window.innerWidth <= 900) {
+        document.getElementById('myNavMenu').className = 'nav-menu';
+      }
+    });
+  });
+  
+  // Form submission handler (placeholder - you can add your own logic)
+  const contactForm = document.querySelector('.form-control');
+  if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      // Here you would typically send the form data to a server
+      alert('Form submitted! (This is a placeholder - implement your own form handling)');
+      // Reset form after submission
+      this.reset();
+    });
+  }
+});
+
+// Smooth scrolling for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    document.querySelector(this.getAttribute('href')).scrollIntoView({
+      behavior: 'smooth'
+    });
+  });
+});
