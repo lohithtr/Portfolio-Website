@@ -24,7 +24,7 @@ window.onscroll = function () {
 
 // Typing animation
 var typingEffect = new Typed(".typedText", {
-  strings: ["Web Developer", "Java Developer", "Designer"],
+  strings: ["Web Developer", "Java Developer", "Full Stack Developer"],
   loop: true,
   typeSpeed: 100,
   backSpeed: 80,
